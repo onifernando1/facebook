@@ -1,41 +1,56 @@
 <div class="new_user_container">  
-  
   <div class ="new_user_left">
-  <div class="logo">onibook</div>
-  <div class="slogan">Onibook helps you connect and share with the people in your life.</div>
+    <div class="logo">onibook</div>
+    <div class="slogan">Onibook helps you connect and share with the people in your life.</div>
   </div>
 
   <div class="new_user_right">
     <div class="new_user_form_container">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="new_user_form">
 
-          <div class="field">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email Address" %>
-          </div>
+        <% resource.errors.full_messages.each do |msg| %>
+          <div><%= msg %></div>
+                    <div><%= puts "#{msg}" %></div>
 
-          <div class="field">
-            <%= f.password_field :password, autocomplete: "current-password",placeholder:"Password" %>
-          </div>
-
-          <% if devise_mapping.rememberable? %>
-            <div class="check_box_field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end %>
-
-          <div class="actions">
-            <%= f.submit "Log in" %>
-          </div>
         <% end %>
 
-        <%=link_to "Forgotten Password?",new_user_password_path, class:"forgotten_password"%>
 
-        <div class="user links">
-        <%=link_to "Create new account",new_user_registration_path, class:"create_account"%>
-        </div>
-        </div>
+
+
+
+
+
+
+
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), data:{turbo:false}) do |f| %>
+          <div class="new_user_form">
+            
+            <div class="field">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email Address" %>
+            </div>
+
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "current-password",placeholder:"Password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="check_box_field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+
+            <div class="actions">
+              <%= f.submit "Log in" %>
+            </div>
+            <% end %>
+
+            <%=link_to "Forgotten Password?",new_user_password_path, class:"forgotten_password"%>
+
+            <div class="user links">
+              <%=link_to "Create new account",new_user_registration_path, class:"create_account"%>
+            </div>
+          </div>
     </div>
   </div>
 
