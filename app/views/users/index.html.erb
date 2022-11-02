@@ -4,7 +4,14 @@ Search for a user
 <%= link_to "Create New Account", new_user_registration_path%>
 <%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
 
-<%=form_with model: @user, data:{turbo:false} do |form|%>
-<%=form.label :first_name, "First Name"%>
-<%=form.text_field :first_name%>
+<%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
+<%=form.label :full_name, "Full Name"%>
+<%=form.text_field :full_name%>
+<%=form.submit%>
+<%end%>
+
+Users Found:
+<%=@users_found.each do |user|%>
+<%= user.full_name%>
+<%=user%>
 <%end%>
