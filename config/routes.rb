@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "users#index"
+
+  resources :friend_requests
+
 end

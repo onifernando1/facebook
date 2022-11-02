@@ -7,11 +7,13 @@ Search for a user
 <%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
 <%=form.label :full_name, "Full Name"%>
 <%=form.text_field :full_name%>
-<%=form.submit%>
+<%=form.submit "Search"%>
 <%end%>
 
 Users Found:
+<%if @users_found%>
 <%=@users_found.each do |user|%>
 <%= user.full_name%>
 <%=user%>
+<%end%>
 <%end%>
