@@ -1,3 +1,10 @@
 Hi!
+Search for a user 
 <%= link_to "Sign in", new_user_session_path%>
 <%= link_to "Create New Account", new_user_registration_path%>
+<%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
+
+<%=form_with model: @user, data:{turbo:false} do |form|%>
+<%=form.label :first_name, "First Name"%>
+<%=form.text_field :first_name%>
+<%end%>
