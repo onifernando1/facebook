@@ -1,0 +1,9 @@
+User Page
+
+Add friend 
+
+<%=form_with url:"/friend_requests", data:{turbo:false} do |f|%>
+<%f.hidden_field :sent_to_id%>
+<%f.hidden_field :sent_from_id%>
+<%=f.submit "Add Friend"%>
+<%end%>

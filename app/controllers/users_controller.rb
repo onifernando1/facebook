@@ -3,18 +3,19 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all 
-
         if params[:full_name] != nil 
             full_name = params[:full_name].downcase
             capitalize_first_letters(full_name)
             @users_found = User.where(full_name: params[:full_name])  
-            redirect_to friend_requests_path
         end 
+
     end 
 
     def show
         @user = User.find(params[:id])
+        @friend_requests = FriendRequest.all
     end
+
 
     private 
 
@@ -30,4 +31,6 @@ class UsersController < ApplicationController
     
     end 
 
+
+ 
 end
