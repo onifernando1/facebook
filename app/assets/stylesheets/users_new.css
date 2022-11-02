@@ -14,18 +14,44 @@ body {
     background-color: #f0f2f5;
     height:100vh;
     margin-top:-8px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
 }
+
+.new_user_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top:-100px;
+}
+
+.new_user_right{}
 
 .notice, .alert {
     display:inline;
     margin-top:50px;
 }
 
+.new_user_form_container {
+    /* background-color: white; */
+    height:350px;
+    width:400px;
+
+}
+
 .new_user_form{
     background-color: white;
-    height:349px;
-    width:396px;
+    border-radius: 10px;
+    /* height:349px; */
+    /* width:396px; */
+
     padding:13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .forgotten_password, .create_account {
@@ -49,26 +75,40 @@ body {
     height:35px;
     width:170px;
     border-radius: 6px;
-    margin-top: 100px;
+    margin-top: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
-/* .user.links{
-    background-color: red;
-    height:100px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .actions > input {
     background-color:#1877F2;
     color:white;
     border:none;
     padding:10px;
-    height:35px;
+    height:45px;
+    width:350px;
+    font-size:1.3rem;
+    font-weight:700;
+    border-radius: 7px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.slogan{
+    font-size:1.3rem;
     width:390px;
-    font-size:1.5rem;
+}
+
+.check_box_field{
+    margin-left: -235px;
+}
+
+.field >input{
+    width:350px;
+    height:40px;
+    margin-bottom:20px;
+    
 }
