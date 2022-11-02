@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -20,3 +21,9 @@ body {
     margin-top:50px;
 }
 
+.new_user_form{
+    background-color: white;
+    height:349px;
+    width:396px;
+    padding:13px;
+}
