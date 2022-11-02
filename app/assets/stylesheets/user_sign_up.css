@@ -1,0 +1,14 @@
+.sign_up_container{
+    background-color: #f0f2f5;
+    height:100vh;
+    margin-top:-8px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign_in, .sign_in:visited{
+    /* text-decoration: none; */
+    color:blue;
+}
