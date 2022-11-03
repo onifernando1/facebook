@@ -8,9 +8,9 @@ class FriendRequestsController < ApplicationController
         # @user = User.find(params[:id])
         @friend_request = FriendRequest.new(friend_request_params)
         if @friend_request.save
-            redirect_to root_path
+            redirect_to user_path(current_user)
         else 
-            # render user_path(@user), status: :unprocessable_entity, id: @user.id
+            render user_path(current_user), status: :unprocessable_entity, id: @user.id
         end  
             
     end 

@@ -10,7 +10,17 @@ class User < ApplicationRecord
          validates :password, presence: true, length:{minimum:3}
 
          has_many :posts
-         has_many :friends, through: :friend_requests
+
+         has_many :fr_sent, 
+                  class_name:"FriendRequest", 
+                  inverse_of: "sent_from", 
+                  foreign_key: "sent_from_id"
+
+         has_many :fr_received, 
+                  class_name:"FriendRequest", 
+                  inverse_of:"sent_to", 
+                  foreign_key: "sent_to_id"
+
          has_many :friend_requests
          
         
