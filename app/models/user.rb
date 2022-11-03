@@ -10,6 +10,8 @@ class User < ApplicationRecord
          validates :password, presence: true, length:{minimum:3}
 
          has_many :posts
+         has_many :friends, through: :friend_requests
+         has_many :friend_requests
          
         
 end

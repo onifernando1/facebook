@@ -2,8 +2,11 @@ User Page
 
 Add friend 
 
-<%=form_with url:"/friend_requests", data:{turbo:false} do |f|%>
-<%f.hidden_field :sent_to_id%>
-<%f.hidden_field :sent_from_id%>
+<%= current_user.id%>
+<%=@user.id%>
+
+<%=form_with model:@friend_request, data:{turbo:false} do |f|%>
+<%=f.hidden_field :sent_to_id, :value => @user.id%>
+<%=f.hidden_field :sent_from_id, :value => current_user.id %>
 <%=f.submit "Add Friend"%>
 <%end%>

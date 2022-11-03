@@ -14,7 +14,6 @@ Users Found:
 <%if @users_found%>
     <%=@users_found.each do |user|%>
     <%= user.full_name%>
-    <%=link_to "View Profile", user_path(user)%>
-    
+    <%=link_to "View Profile", user_path(user), id: user.id%>
     <%end%>
 <%end%>
