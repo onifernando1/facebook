@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-        
+
          validates :full_name, presence: true
          validates :birthday, presence: true
          validates :email, presence: true, uniqueness:true
@@ -22,6 +22,9 @@ class User < ApplicationRecord
                   foreign_key: "sent_to_id"
 
          has_many :friend_requests
-         
+
+         has_many :friendships
+
+         has_many :friends, through: :friendships, source: :user      
         
 end
