@@ -1,0 +1,4 @@
+<% @friend_requests.each do |fr|%>
+SENT FROM:<%=fr.sent_from.full_name%> 
+SENT TO:<%=fr.sent_to.full_name%> 
+<%end%>
