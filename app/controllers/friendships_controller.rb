@@ -8,7 +8,8 @@ class FriendshipsController < ApplicationController
         
         @friendship = Friendship.new(friendship_params)
         if @friendship.save()
-            #update friendrequets to active somehow 
+            #update friendrequests to active somehow
+            @friendship.create_inverse_relationship() 
             redirect_to root_path
         else 
             render root_path, status: :unprocessable_entity
@@ -18,7 +19,7 @@ class FriendshipsController < ApplicationController
     private 
 
     def friendship_params
-        params.require(:friendship).permit(:friend1_id, :friend2_id)
+        params.require(:friendship).permit(:friend_one_id, :friend_two_id)
     end 
 
 end

@@ -26,13 +26,10 @@ No new friend Requests
     <%=friend_request.sent_from.full_name%>
     
      <%=form_with model:@friendship, data:{turbo:false} do |f|%>
-     <%=f.hidden_field :friend1_id, value: friend_request.sent_from.id %> 
-     <%=f.hidden_field :friend2_id, value:current_user.id%> 
+     <%=f.hidden_field :friend_one_id, value: friend_request.sent_from.id %> 
+     <%=f.hidden_field :friend_two_id, value:current_user.id%> 
      <%=f.submit "Accept Friend Request"%> 
      <%end%>
-
-
-
 
     <%end%>
 <%end%>
