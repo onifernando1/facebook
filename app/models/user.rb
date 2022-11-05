@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         validates :full_name, presence: true
-         validates :birthday, presence: true
-         validates :email, presence: true, uniqueness:true
-         validates :password, presence: true, length:{minimum:3}
+        #  validates :full_name, presence: true
+        #  validates :birthday, presence: true
+        #  validates :email, presence: true, uniqueness:true
+        #  validates :password, presence: true, length:{minimum:3}
 
          has_many :posts
 
@@ -31,7 +31,12 @@ class User < ApplicationRecord
 
          has_many :friendships
 
-        has_many :friends, through: :friendships, source: :friend1, class_name: "User"
+        has_many :friendships_as_one, foreign_key: "friend_one_id", class_name: "Friendship"
+        has_many :friends_as_one, through: :friendships_as_one, source: :friend_two
+
+        has_many :friendships_as_two, foreign_key: "friend_two_id", class_name: "Friendship"
+        has_many :friends_as_two, through: :friendships_as_one, source: :friend_one
+
 
         
 end
