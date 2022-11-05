@@ -17,3 +17,12 @@ Users Found:
     <%=link_to "View Profile", user_path(user), id: user.id%>
     <%end%>
 <%end%>
+
+Friend Requests:
+<%if current_user.pending_friend_requests.empty?%>
+No new friend Requests
+<%else%>
+    <%current_user.pending_friend_requests.each do |friend|%>
+    <%=friend.full_name%>
+    <%end%>
+<%end%>

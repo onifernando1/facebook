@@ -21,7 +21,14 @@ class User < ApplicationRecord
                   inverse_of:"sent_to", 
                   foreign_key: "sent_to_id"
 
+          has_many :pending_friend_requests, 
+          -> {where "status = 'false'"},
+          class_name:"FriendRequest",
+          inverse_of:"sent_to",
+          foreign_key:"sent_to_id"
+
          has_many :friend_requests
+
 
          has_many :friendships
 
