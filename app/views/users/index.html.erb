@@ -26,3 +26,16 @@ No new friend Requests
     <%=friend.full_name%>
     <%end%>
 <%end%>
+<br/>
+CURRENT USER <%=current_user.full_name%>
+<br/>
+
+Pending friends:
+<%if current_user.fr_sent.empty?%>
+No friend requests awaiting response 
+
+<%else%>
+    <%current_user.fr_sent.each do |fr|%>
+    <%=fr.sent_to.full_name%>
+    <%end%>
+<%end%>
