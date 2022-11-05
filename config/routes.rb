@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "users#index"
 
   resources :friend_requests
+  resources :friendships
   resources :users
   
 

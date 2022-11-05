@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all 
+        @friendship = Friendship.new()
         if params[:full_name] != nil 
             full_name = params[:full_name].downcase
             full_name = capitalize_first_letters(full_name)

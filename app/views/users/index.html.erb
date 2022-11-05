@@ -22,8 +22,18 @@ Friend Requests:
 <%if current_user.pending_friend_requests.empty?%>
 No new friend Requests
 <%else%>
-    <%current_user.pending_friend_requests.each do |friend|%>
-    <%=friend.full_name%>
+    <%current_user.pending_friend_requests.each do |friend_request|%>
+    <%=friend_request.sent_from.full_name%>
+    
+     <%=form_with model:@friendship, data:{turbo:false} do |f|%>
+     <%=f.hidden_field :friend1_id, value: friend_request.sent_from.id %> 
+     <%=f.hidden_field :friend2_id, value:current_user.id%> 
+     <%=f.submit "Accept Friend Request"%> 
+     <%end%>
+
+
+
+
     <%end%>
 <%end%>
 <br/>
