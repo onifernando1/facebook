@@ -10,6 +10,14 @@ class UsersController < ApplicationController
             @users_found = User.where(full_name: full_name)  
         end 
 
+
+# to be deleted
+@friend_requests = FriendRequest.all
+@found = @friend_requests.find_by(sent_to_id:current_user.id)
+
+
+
+
     end 
 
     def show
