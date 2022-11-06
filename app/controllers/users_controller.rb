@@ -9,6 +9,8 @@ class UsersController < ApplicationController
             full_name = capitalize_first_letters(full_name)
             @users_found = User.where(full_name: full_name)  
         end 
+        @list_of_ids = get_ids()
+        @timeline_posts = Post.where(user_id: @list_of_ids)
 
     end 
 
@@ -46,6 +48,20 @@ class UsersController < ApplicationController
         new_name = new_name_array.join(" ")
         new_name
     
+    end 
+
+    def get_friend_ids
+        list_of_ids = current_user.friends_as_one.pluck(:id)
+    end 
+
+    def add_own_id(list_of_ids)
+        list_of_ids << current_user.id
+    end 
+
+    def get_ids
+        list_of_ids = get_friend_ids()
+        list_of_ids = add_own_id(list_of_ids)
+        list_of_ids
     end 
 
 

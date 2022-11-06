@@ -128,11 +128,15 @@
         
         <div class="index_central_posts_container grey">
 
-            <%=turbo_frame_tag "post" do %>
             <div class="index_posts">
-                    Posts:
-                    <div class="index_post">Hi</div>
-                    
+                    <%@timeline_posts.each do |post|%>
+                    <%=turbo_frame_tag post do %>
+                    <%= post.user.full_name%>
+                    <%= post.information%>
+                    <%if post.user.id == current_user.id%>
+                    <%=link_to "Edit Post", edit_post_path(post)%>    
+                    <%end%>
+                    <%end%>
             </div>
             <%end%>
 
