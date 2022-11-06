@@ -11,6 +11,8 @@ class UsersController < ApplicationController
         end 
         @list_of_ids = get_ids()
         @timeline_posts = Post.where(user_id: @list_of_ids)
+        @post = Post.new()
+        @user_first_name = user_first_name()
 
     end 
 
@@ -62,6 +64,13 @@ class UsersController < ApplicationController
         list_of_ids = get_friend_ids()
         list_of_ids = add_own_id(list_of_ids)
         list_of_ids
+    end 
+
+    def user_first_name
+        name = current_user.full_name
+        name = name.split(" ")
+        name = name[0]
+        name 
     end 
 
 

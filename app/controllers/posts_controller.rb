@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
     def new
         @post = Post.new 
+        @user_first_name = user_first_name()
     end 
 
     def create
@@ -56,5 +57,11 @@ class PostsController < ApplicationController
         params.require(:post).permit(:user_id, :information)
     end 
 
+    def user_first_name
+        name = current_user.full_name
+        name = name.split(" ")
+        name = name[0]
+        name 
+    end 
     
 end

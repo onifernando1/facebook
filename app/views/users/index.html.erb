@@ -128,6 +128,14 @@
         
         <div class="index_central_posts_container grey">
 
+            <div class="new_post_form_container homepage">
+                <div class="post_edit_frame">
+                    <%=turbo_frame_tag @post do %>
+                    <%= link_to "What's on your mind, #{@user_first_name}?", new_post_path %>
+                    <%end%>
+                </div>
+            </div>
+
             <div class="index_posts">
                     <%@timeline_posts.each do |post|%>
                     <%=turbo_frame_tag post do %>
