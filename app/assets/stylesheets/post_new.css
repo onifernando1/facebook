@@ -1,6 +1,6 @@
 .post_new_frame {
     height:380px;
-    width:600px;
+    width:700px;
     /* background-color: red; */
     display:flex;
     flex-direction: column;
@@ -8,6 +8,7 @@
     background-color: white;
     margin-top:150px;
     margin-top:40px;
+    /* margin-left:-100px; */
 }
 
 .create_post_title{
