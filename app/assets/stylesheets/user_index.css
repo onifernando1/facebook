@@ -36,3 +36,14 @@
     /* justify-content: center; */
     align-items: center;
 }
+
+.logo{
+    height:40px;
+}
+
+.left_bar_links > div, .index_your_shortcuts > div {
+    display:flex;
+    align-items: center;
+    gap:10px;
+    
+}
