@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :friend_requests
   resources :friendships
   resources :users
+  resources :posts
   
 
 end
