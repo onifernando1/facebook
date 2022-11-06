@@ -1,51 +1,101 @@
-Hi!
-Search for a user 
-<%= link_to "Sign in", new_user_session_path%>
-<%= link_to "Create New Account", new_user_registration_path%>
-<%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
-
-<%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
-<%=form.label :full_name, "Full Name"%>
-<%=form.text_field :full_name%>
-<%=form.submit "Search"%>
-<%end%>
-
-Users Found:
-<%if @users_found%>
-    <%=@users_found.each do |user|%>
-    <%= user.full_name%>
-    <%=link_to "View Profile", user_path(user), id: user.id%>
-    <%end%>
-<%end%>
-
-Friend Requests:
-<%if current_user.pending_friend_requests.empty?%>
-No new friend Requests
-<%else%>
-    <%current_user.pending_friend_requests.each do |friend_request|%>
-    <%=friend_request.sent_from.full_name%>
     
-     <%=form_with model:@friendship, data:{turbo:false} do |f|%>
-     <%=f.hidden_field :friend_one_id, value: friend_request.sent_from.id %> 
-     <%=f.hidden_field :friend_two_id, value:current_user.id%> 
-     <%=f.submit "Accept Friend Request"%> 
-     <%end%>
+ <div class="index_container">   
+    <div class="index_top_bar_container">
+        Hi!
+        Search for a user 
+        <%= link_to "Sign in", new_user_session_path%>
+        <%= link_to "Create New Account", new_user_registration_path%>
+        <%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
 
-    <%end%>
-<%end%>
-<br/>
-CURRENT USER <%=current_user.full_name%>
-<br/>
+        <%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
+        <%=form.label :full_name, "Full Name"%>
+        <%=form.text_field :full_name%>
+        <%=form.submit "Search"%>
+        <%end%>
+    </div>
+    <div class="index_main_page_container">
+       
+       <div class="index_left_bar grey">
+        <div class="left_bar_links">
+            <div><%=current_user.full_name%></div>
+            <div>Groups</div>
+            <div>Marketplace</div>
+            <div>Watch</div>
+            <div>Memories</div>
+            <div>Saved</div>
+            <div>Pages</div>
+            <div>See more</div>
+        </div>
+        <div class="index_your_shortcuts">
+            <div>Your shortcuts</div>
+            <div>8 ball pool            </div>
+            <div>Pirate Kings</div>
+            <div>Texas HoldEm Poker</div>
+        </div>
+       </div>
 
-Pending friends:
-<%if current_user.fr_sent.empty?%>
-No friend requests awaiting response 
+        <%# <div class="index_users_found grey">
 
-<%else%>
-    <%current_user.fr_sent.each do |fr|%>
-    <%=fr.sent_to.full_name%>
-    <%end%>
-<%end%>
-<br/>
+        <%# <%if @users_found%>
+                <%# Users Found: %>
+            <%# <%=@users_found.each do |user|%> 
+            <%# <%= user.full_name%> 
+            <%# <%=link_to "View Profile", user_path(user), id: user.id%>
+            <%# <%end%> 
+        <%# <%end%> 
 
-FOUND : <%=@friend_requests%>
+        <%# </div>  %>
+        
+        <div class="index_central_posts_container grey">
+            <div class="index_posts">
+                    Posts:
+                    <div>Hi</div>
+                    <div>Hi</div>
+                    <div>Hi</div>
+                    <div>Hi</div>
+            </div>
+        </div>
+
+        <div class="index_right_friends_bar grey">
+
+            <div class="index_friend_requests">
+                Friend Requests:
+                <%if current_user.pending_friend_requests.empty?%>
+                No new friend Requests
+                <%else%>
+                    <%current_user.pending_friend_requests.each do |friend_request|%>
+                    <%=friend_request.sent_from.full_name%>
+                    
+                    <%=form_with model:@friendship, data:{turbo:false} do |f|%>
+                    <%=f.hidden_field :friend_one_id, value: friend_request.sent_from.id %> 
+                    <%=f.hidden_field :friend_two_id, value:current_user.id%> 
+                    <%=f.submit "Accept Friend Request"%> 
+                    <%end%>
+
+                    <%end%>
+                <%end%>
+
+            </div>
+
+            <div class="index_friends">
+
+
+                Pending friends:
+                <%if current_user.fr_sent.empty?%>
+                No friend requests awaiting response 
+
+                <%else%>
+                    <%current_user.fr_sent.each do |fr|%>
+                    <%=fr.sent_to.full_name%>
+                    <%end%>
+                <%end%>
+                <br/>
+
+                Friends:
+                <%current_user.friends_as_one.each do |friend|%>
+                <%=friend.full_name%>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
