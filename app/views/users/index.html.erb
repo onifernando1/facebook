@@ -1,17 +1,22 @@
     
  <div class="index_container">   
     <div class="index_top_bar_container">
-        Hi!
-        Search for a user 
+        <%if user_signed_in? == false%>
         <%= link_to "Sign in", new_user_session_path%>
         <%= link_to "Create New Account", new_user_registration_path%>
-        <%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
+        <%else%>
+          <div class="name_search">
+            <div>Search for a user</div> 
+            <%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
+            <%# <%=form.label :full_name, "Full Name"%>
+            <%=form.text_field :full_name, placeholder: "Full name"%>
+            <%=form.submit "Search"%>
+            <%end%>
+        </div>
+                <%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
 
-        <%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
-        <%=form.label :full_name, "Full Name"%>
-        <%=form.text_field :full_name%>
-        <%=form.submit "Search"%>
         <%end%>
+      
     </div>
     <div class="index_main_page_container">
        
@@ -124,10 +129,8 @@
         <div class="index_central_posts_container grey">
             <div class="index_posts">
                     Posts:
-                    <div>Hi</div>
-                    <div>Hi</div>
-                    <div>Hi</div>
-                    <div>Hi</div>
+                    <div class="index_post">Hi</div>
+                    
             </div>
         </div>
 
@@ -154,22 +157,29 @@
 
             <div class="index_friends">
 
+                <div class="index_pending_friends">
+                    Pending friends:
+                    <%if current_user.fr_sent.empty?%>
+                    No friend requests awaiting response 
 
-                Pending friends:
-                <%if current_user.fr_sent.empty?%>
-                No friend requests awaiting response 
-
-                <%else%>
-                    <%current_user.fr_sent.each do |fr|%>
-                    <%=fr.sent_to.full_name%>
+                    <%else%>
+                        <%current_user.fr_sent.each do |fr|%>
+                        <div class="index_pending_request">
+                            <div class="index_pending_request_logo">LOGO</div>
+                            <div class="index_pending_request_name"><%=fr.sent_to.full_name%></div>
+                        </div>
+                        <%end%>
                     <%end%>
-                <%end%>
-                <br/>
+                </div>
 
+                <div class="index_friends_list">
                 Friends:
                 <%current_user.friends_as_one.each do |friend|%>
-                <%=friend.full_name%>
+                <div class="index_current_friends_container">
+                <div class="index_current_friends_logo">LOGO</div>
+                <div class="index_current_friends_name"><%=friend.full_name%> </div>
                 <%end%>
+                </div>
             </div>
         </div>
     </div>
