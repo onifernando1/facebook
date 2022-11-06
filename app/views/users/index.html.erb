@@ -127,11 +127,15 @@
         <%# </div>  %>
         
         <div class="index_central_posts_container grey">
+
+            <%=turbo_frame_tag "post" do %>
             <div class="index_posts">
                     Posts:
                     <div class="index_post">Hi</div>
                     
             </div>
+            <%end%>
+
         </div>
 
         <div class="index_right_friends_bar grey">
