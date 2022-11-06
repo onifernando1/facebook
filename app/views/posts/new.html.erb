@@ -1,9 +1,12 @@
 <%= turbo_frame_tag @post do %>
-    <div class="post_edit_frame">
+    <div class="post_new_frame">
+    <div class="create_post_title">Create post</div>
     <%=form_with model: @posts, data:{turbo:false} do |f|%>
-    <%=f.hidden_field :user_id, value: current_user.id%>
-    <%=f.text_field :information, placeholder: "What's on your mind,#{@user_first_name}?"%>
-    <%=f.submit "Post"%>
+    <div class="create_post_form">
+        <%=f.hidden_field :user_id, value: current_user.id%>
+        <%=f.text_field :information, placeholder: "What's on your mind,#{@user_first_name}?"%>
+        <%=f.submit "Post"%>
+    </div>
     <%end%>
   <%= link_to "Return to Post", root_path %>
   </div>
