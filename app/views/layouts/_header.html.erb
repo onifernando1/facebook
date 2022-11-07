@@ -7,7 +7,7 @@
             <%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
             <div class="name_search_form">
             <div class="name_search_input">
-            <%=form.text_field :full_name, placeholder: "Search user by full name, e.g John Smith"%>
+            <%=form.text_field :full_name, placeholder: "Search by full name, e.g John Smith"%>
             </div>
             <div class="name_search_submit">
             <%=form.submit "Search"%>

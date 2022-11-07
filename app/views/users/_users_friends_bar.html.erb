@@ -1,0 +1,27 @@
+<div class="index_friends grey">
+
+    <div class="index_pending_friends">
+        Pending friends:
+        <%if current_user.fr_sent.empty?%>
+        No friend requests awaiting response 
+
+        <%else%>
+            <%current_user.fr_sent.each do |fr|%>
+            <div class="index_pending_request">
+                <div class="index_pending_request_logo">LOGO</div>
+                <div class="index_pending_request_name"><%=fr.sent_to.full_name%></div>
+            </div>
+            <%end%>
+        <%end%>
+    </div>
+
+    <div class="index_friends_list">
+        Friends:
+        <%current_user.friends_as_one.each do |friend|%>
+        <div class="index_current_friends_container">
+            <div class="index_current_friends_logo">LOGO</div>
+            <div class="index_current_friends_name"><%=friend.full_name%> </div>
+            <%end%>
+        </div>
+    </div>
+</div>
