@@ -1,0 +1,23 @@
+ <div class="index_top_bar_container">
+        <%if user_signed_in? == false%>
+        <%= link_to "Sign in", new_user_session_path%>
+        <%= link_to "Create New Account", new_user_registration_path%>
+        <%else%>
+          <div class="name_search">
+            <%=form_with model: @user, method: :get, data:{turbo:false} do |form|%>
+            <div class="name_search_form">
+            <div class="name_search_input">
+            <%=form.text_field :full_name, placeholder: "Search user by full name, e.g John Smith"%>
+            </div>
+            <div class="name_search_submit">
+            <%=form.submit "Search"%>
+            </div>
+            </div>
+            <%end%>
+        </div>
+                <div class="logout">
+                <%=button_to('Logout', destroy_user_session_path, :method => :delete)%>
+                </div>
+        <%end%>
+      
+    </div>
