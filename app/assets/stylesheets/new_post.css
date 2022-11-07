@@ -1,0 +1,10 @@
+.new_post_container{
+    display:grid;
+    grid-template-columns: 1fr 4fr 1fr;
+
+}
+
+.new_post_middle {
+    display:flex;
+    justify-content: center;
+}

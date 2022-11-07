@@ -1,13 +1,18 @@
-<%= turbo_frame_tag @post do %>
-    <div class="post_new_frame">
-    <div class="create_post_title">Create post</div>
-    <%=form_with model: @posts, data:{turbo:false} do |f|%>
-    <div class="create_post_form">
-        <%=f.hidden_field :user_id, value: current_user.id%>
-        <%=f.text_field :information, placeholder: "What's on your mind,#{@user_first_name}?"%>
-        <%=f.submit "Post"%>
-    </div>
-    <%end%>
-  <%= link_to "Return to Post", root_path %>
+  
+  <div class="new_post_container grey">
+    <%=render "/users/index_left_bar"%>
+    <div class="new_post_middle grey">
+          <div class="post_new_frame">
+          <div class="create_post_title">Create post</div>
+          <%=form_with model: @post, data:{turbo:false} do |f|%>
+          <div class="create_post_form">
+              <%=f.hidden_field :user_id, value: current_user.id%>
+              <%=f.text_field :information, placeholder: "What's on your mind,#{@user_first_name}?"%>
+              <%=f.submit "Post"%>
+          </div>
+        <%= link_to "Return home", root_path %>
+        </div>
+      <%end%>
+      </div>
+      <%= render "/users/users_friends_bar"%>
   </div>
-<%end%>
