@@ -1,14 +1,17 @@
-User Page
-
-Add friend 
-
-<%= current_user.id%>
-<%=@user.id%>
-
-<%=form_with model:@friend_request, data:{turbo:false} do |f|%>
-<%=f.hidden_field :sent_to_id, :value => @user.id%>
-<%=f.hidden_field :sent_from_id, :value => current_user.id %>
-<%=f.submit "Add Friend"%>
-<%end%>
-
-<%= image_tag @user.gravatar_url default: @default_user.gravatar_url%>
+<div class="user_show_container">
+    <div class="profile_background">
+        <%=image_tag "profile_background_2"%>
+    </div>
+    <div>
+    
+    <div class="user_avatar">
+        <%= image_tag @user.gravatar_url default: @default_user.gravatar_url%>
+    </div>
+    <%=form_with model:@friend_request, data:{turbo:false} do |f|%>
+    <%=f.hidden_field :sent_to_id, :value => @user.id%>
+    <%=f.hidden_field :sent_from_id, :value => current_user.id %>
+    <%=f.submit "Add Friend"%>
+    <%end%>
+   
+    </div>
+</div>

@@ -1,6 +1,7 @@
 .links_avatar_image > img{
     height:50px;
     margin-top:5px;
+    margin-left:-10px;
 
 }
 
@@ -39,4 +40,9 @@
     align-items: center;
     gap:10px;
     
+}
+
+.left_bar_links > div > div > a:visited, .left_bar_links > div > div > a {
+    text-decoration: none;
+    color:black;
 }

@@ -1,0 +1,19 @@
+.profile_background > img {
+    width:1000px;
+    height:500px;
+}
+
+.user_show_container{
+    height:100vh;
+    width:100%;
+    background-image: linear-gradient(rgb(122, 121, 121), rgb(234, 234, 233), rgb(234, 234, 234));
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    position:relative;
+}
+
+.user_avatar{
+    position:absolute;
+    margin-left:-400px;
+}
