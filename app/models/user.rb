@@ -37,6 +37,7 @@ class User < ApplicationRecord
         has_many :friendships_as_two, foreign_key: "friend_two_id", class_name: "Friendship"
         has_many :friends_as_two, through: :friendships_as_one, source: :friend_one
 
+        has_many :likes
 
         
 end

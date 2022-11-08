@@ -13,6 +13,8 @@ class UsersController < ApplicationController
         @timeline_posts = Post.where(user_id: @list_of_ids)
         @post = Post.new()
         @user_first_name = user_first_name()
+        @like = Like.new()
+        
 
     end 
 

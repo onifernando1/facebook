@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :friendships
   resources :users
   resources :posts
+  resources :likes
   
 end
