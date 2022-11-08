@@ -3,7 +3,10 @@
 
     <div class="left_bar_links">
         <div>
-            <div>Img</div>
+            <div class="links_avatar_image">
+                <%= image_tag current_user.gravatar_url default: @default_user.gravatar_url%>
+            
+            </div>
             <div><%=current_user.full_name%></div>
         </div>
         <div>

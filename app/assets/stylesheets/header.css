@@ -4,7 +4,7 @@
     /* display:flex; */
     /* justify-content: space-around; */
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 300px 1000px 300px;
     }
 
 
@@ -75,4 +75,19 @@
 
 .logout > form >  button {
     background-color: ;
+}
+
+.onibook_header > a, .onibook_header > a:visited{
+    text-decoration: none;
+    color: #1877F2; 
+    font-size: 3rem;
+    font-weight:800;
+    
+}
+
+.onibook_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
 }

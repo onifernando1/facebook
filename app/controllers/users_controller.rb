@@ -15,6 +15,8 @@ class UsersController < ApplicationController
         @user_first_name = user_first_name()
         @like = Like.new()
         @comment = Comment.new()
+        @default_user = User.find_by(email:"onifernando1@gmail.com")
+
 
     end 
 
