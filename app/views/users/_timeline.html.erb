@@ -24,7 +24,9 @@
                             <%end%>
                         </div>
 
-                        <div class="like_count"></div>
+                        <div class="like_count">
+                        <%=post.likes.count()%>
+                        </div>
 
                         <div class="post_like">
                         <%=form_with model: @like, data:{turbo:false} do |f|%>
