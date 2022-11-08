@@ -39,11 +39,33 @@
                         </div>
 
                         <div class="post_comment_container">
+
+                            <div class="post_list_comments">
+                                <%post.comments.each do |comment|%>
+                                <div class="individual_comment">
+                                <div class="commenter_name">
+                                    <%=comment.commenter.full_name%>
+                                </div>
+                                <div class="commenter_info">
+                                    <%=comment.information%>
+                                </div>
+                                </div>
+                                <%end%>
+
+                            </div>
+
+
+
+
+
+
                             <%=form_with model: @comment, data:{turbo:false} do |f|%>
+                            <div class="write_comment_container">
                             <%=f.hidden_field :post_id, value:post.id%>
                             <%=f.hidden_field :commenter_id, value:current_user.id%>
-                            <%=f.text_field :information, placeholder:"Comment..."%>
+                            <%=f.text_field :information, placeholder:"Write a comment..."%>
                             <%=f.submit "post"%>
+                            </div>
                             <%end%>
                         </div>
 

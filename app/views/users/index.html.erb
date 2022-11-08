@@ -5,19 +5,13 @@
        
         <%=render "users/index_left_bar"%>
 
-        <%# <div class="index_users_found grey">
 
-        <%# <%if @users_found%>
-                <%# Users Found: %>
-            <%# <%=@users_found.each do |user|%> 
-            <%# <%= user.full_name%> 
-            <%# <%=link_to "View Profile", user_path(user), id: user.id%>
-            <%# <%end%> 
-        <%# <%end%> 
+        <%if @users_found%>
+            <%=render "users/user_search_results"%>
+        <%else%> 
 
-        <%# </div>  %>
-        
-        <%= render "users/timeline"%>
+            <%= render "users/timeline"%>
+        <%end%>
         
         
         <%= render "/users/users_friends_bar"%>

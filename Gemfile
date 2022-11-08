@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
+gem 'gravtastic'
 
 
 # Use Sass to process CSS

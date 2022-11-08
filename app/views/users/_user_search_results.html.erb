@@ -1,0 +1,9 @@
+    <div class="user_search_results_container grey">
+    Users Found:
+            <%=@users_found.each do |user| %>%
+            <%= user.full_name%> 
+            <%=link_to "View Profile", user_path(user), id: user.id%>
+            <%end%> 
+
+           <%=link_to "Back", root_path%> 
+</div>

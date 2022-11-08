@@ -22,6 +22,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @friend_request = FriendRequest.new()
         @friend_requests = FriendRequest.all
+        @default_user = User.find_by(email:"onifernando1@gmail.com")
     end
 
     def new 

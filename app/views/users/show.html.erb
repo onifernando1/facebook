@@ -10,3 +10,5 @@ Add friend
 <%=f.hidden_field :sent_from_id, :value => current_user.id %>
 <%=f.submit "Add Friend"%>
 <%end%>
+
+<%= image_tag @user.gravatar_url default: @default_user.gravatar_url%>
