@@ -36,7 +36,14 @@
                         <%end%>
                         </div>
 
-
+                        <div class="post_comment_container">
+                        <%=form_with model: @comment, data:{turbo:false} do |f|%>
+                        <%=f.hidden_field :post_id, value:post.id%>
+                        <%=f.hidden_field :commenter_id, value:current_user.id%>
+                        <%=f.text_field :information, placeholder:"Comment..."%>
+                        <%=f.submit "post"%>
+                        <%end%>
+                        </div>
 
 
 
