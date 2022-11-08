@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         @post = Post.new()
         @user_first_name = user_first_name()
         @like = Like.new()
-        
+        @comment = Comment.new()
 
     end 
 
