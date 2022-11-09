@@ -91,3 +91,8 @@
     align-items: center;
   
 }
+
+.signed_out_header{
+    background-color: #f0f2f5;
+    width:198vh;
+}

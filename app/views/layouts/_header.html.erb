@@ -1,7 +1,8 @@
  <div class="index_top_bar_container">
         <%if user_signed_in? == false%>
-        <%= link_to "Sign in", new_user_session_path%>
-        <%= link_to "Create New Account", new_user_registration_path%>
+        <%# <%= link_to "Sign in", new_user_session_path%> 
+        <%# <%= link_to "Create New Account", new_user_registration_path%> 
+          <div class="signed_out_header"></div>
         <%else%>
         <div class="onibook_header">
           <%=link_to "O", root_path%>
