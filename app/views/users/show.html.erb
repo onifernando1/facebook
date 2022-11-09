@@ -1,14 +1,48 @@
-User Page
+<div class="user_show_background">
 
-Add friend 
+    <div class="profile_background">
+        <%=image_tag "profile_background_2"%>
+    </div>
+    <div>
+</div>
+<div class="user_show_header">
+    <div>
+        <div class="user_avatar">
+            <%= image_tag @user.gravatar_url default: @default_user.gravatar_url%>
+        </div>
+        <div class="name_and_friends">
+            <div class="show_user_name">
+                <%=current_user.full_name%>
+            </div>
+            <div class="show_user_friends">
+                <%=current_user.friends_as_one.count()%> <%if current_user.friends_as_one.count()==1%> friend <%else%> friends <%end%>
+            </div>
+        </div>
+    </div>
+    <div class="add_friend_form">
+        <div class="add_friend_button">
+        <div class="add_friend_logo"> 
+            <%=image_tag "add_friends.png"%>
+        </div>
+        <%=form_with model:@friend_request, data:{turbo:false} do |f|%>
+        <%=f.hidden_field :sent_to_id, :value => @user.id%>
+        <%=f.hidden_field :sent_from_id, :value => current_user.id %>
+        <%=f.submit "Add Friend"%>
+        <%end%>
+        </div>
+    </div>
 
-<%= current_user.id%>
-<%=@user.id%>
+</div>
+<div class = "users_show_body_container">
+    <div class="users_show_left">
+    <div>Intro</div>
+    <div>Photos</div>
+    <div>Friends</div>
+    <div>Life Events</div>
+    </div>
+    <div class="users_show_right">
+        <div>Posts</div>
+    </div>
+</div>
 
-<%=form_with model:@friend_request, data:{turbo:false} do |f|%>
-<%=f.hidden_field :sent_to_id, :value => @user.id%>
-<%=f.hidden_field :sent_from_id, :value => current_user.id %>
-<%=f.submit "Add Friend"%>
-<%end%>
 
-<%= image_tag @user.gravatar_url default: @default_user.gravatar_url%>
