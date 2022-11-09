@@ -13,5 +13,22 @@
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
+    overflow-y: auto;
+    height:600px;
+    background-color: red;
+
+}
+
+.friend_request_photo > img{
+    height:45px;
+}
+
+.friend_request_individual_container{
+    display:flex;
+    align-items: center;
+}
+
+.accept_friend_request_form > button {
+    
 
 }

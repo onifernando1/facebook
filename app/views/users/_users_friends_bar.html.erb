@@ -1,29 +1,42 @@
 <div class="index_friends grey">
 
-    <div class="index_pending_friends">       
+    <%# <div class="index_pending_friends">       
         <%if current_user.fr_sent.empty? == false %>
-            Pending friends:
-            <%current_user.fr_sent.each do |fr|%>
-            <div class="index_pending_request">
-                <div class="index_pending_request_logo">
-                <%sender = User.find(fr.sent_from_id)%>
-                                <%= image_tag sender.gravatar_url default: @default_user.gravatar_url%>
-                                <%=sender.full_name%>
-                </div>
-                <div class="index_pending_request_name"><%=fr.sent_to.full_name%></div>
-            </div>
-            <%end%>
-        <%end%>
-    </div>
+            <%# Pending friends: %>
+            <%# <%current_user.fr_sent.each do |fr|%>
+            <%# <div class="index_pending_request"> %>
+                <%# <div class="index_pending_request_logo"> %>
+                <%# <%sender = User.find(fr.sent_from_id)%> 
+                                <%# <%= image_tag sender.gravatar_url default: @default_user.gravatar_url%> 
+                                <%# <%=sender.full_name%> 
+                <%# </div> 
+                <div class="index_pending_request_name"><%=fr.sent_to.full_name</div> 
+            <%# </div> %>
+            <%# <%end%> 
+        <%# <%end%> 
+    <%# </div> %> 
 
 
-    <div>
-                <%current_user.fr_received.each do |fr|%>
-                <%@fr_sender = User.find(fr.sent_from_id)%>
+    <div class="friend_requests_container">
+        <div>Friend Requests</div>
+        <%current_user.fr_received.each do |fr|%>
+        <%@fr_sender = User.find(fr.sent_from_id)%>
+        <div class="friend_request_individual_container">
+            <div class="friend_request_photo">
                 <%= image_tag @fr_sender.gravatar_url default: @default_user.gravatar_url%>
+            </div>
+            <div>
                 <%=@fr_sender.full_name%>
-               <%= render "accept_friend_request_form"%>
-                <%end%>
+            </div>
+            <div class="accept_friend_request_form">
+                <%= render "accept_friend_request_form"%>
+            </div>
+            <div class="reject_friend_request">
+                <%=button_to "Reject", fr, :method => :delete%>
+            </div>
+        </div>
+         
+        <%end%>
 
     </div>
 
@@ -44,3 +57,5 @@
             </div>
         </div>
     </div>
+
+</div>
