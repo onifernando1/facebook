@@ -1,14 +1,15 @@
 <div class="index_friends grey">
 
-    <div class="index_pending_friends">
-        Pending friends:
-        <%if current_user.fr_sent.empty?%>
-        No friend requests awaiting response 
-
-        <%else%>
+    <div class="index_pending_friends">       
+        <%if current_user.fr_sent.empty? == false %>
+            Pending friends:
             <%current_user.fr_sent.each do |fr|%>
             <div class="index_pending_request">
-                <div class="index_pending_request_logo">LOGO</div>
+                <div class="index_pending_request_logo">
+                <%sender = User.find(fr.sent_from_id)%>
+                                <%= image_tag sender.gravatar_url default: @default_user.gravatar_url%>
+                                <%=sender.full_name%>
+                </div>
                 <div class="index_pending_request_name"><%=fr.sent_to.full_name%></div>
             </div>
             <%end%>
@@ -19,12 +20,9 @@
     <div>
                 <%current_user.fr_received.each do |fr|%>
                 <%@fr_sender = User.find(fr.sent_from_id)%>
+                <%= image_tag @fr_sender.gravatar_url default: @default_user.gravatar_url%>
                 <%=@fr_sender.full_name%>
-                <%=form_with model:@friendship,data:{turbo:false} do |f|%>
-                <%=f.hidden_field :friend_one_id, value: @fr_sender.id%>
-                <%=f.hidden_field :friend_two_id, value:current_user.id%>
-                <%=f.submit "Accept friend request"%>
-                <%end%>
+               <%= render "accept_friend_request_form"%>
                 <%end%>
 
     </div>
@@ -33,12 +31,16 @@
 
 
     <div class="index_friends_list">
-        Friends:
-        <%current_user.friends_as_one.each do |friend|%>
-        <div class="index_current_friends_container">
-            <div class="index_current_friends_logo">LOGO</div>
-            <div class="index_current_friends_name"><%=friend.full_name%> </div>
-            <%end%>
+        <div class="index_friends_list_container">
+            Friends:
+            <%current_user.friends_as_one.each do |friend|%>
+            <div class="index_current_friends_container">
+                <div class="index_current_friends_logo">
+                    <%= image_tag friend.gravatar_url default: @default_user.gravatar_url%>
+                </div>
+                <div class="index_current_friends_name"><%=friend.full_name%> </div>
+            </div>
+                <%end%>
+            </div>
         </div>
     </div>
-</div>

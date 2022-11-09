@@ -1,0 +1,17 @@
+.index_current_friends_logo > img {
+    height:45px;
+}
+
+.index_current_friends_container{
+    display: flex;
+    align-items: center;
+    width:250px;
+}
+
+.index_friends_list_container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
