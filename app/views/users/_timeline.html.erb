@@ -40,6 +40,8 @@
 
                         <div class="post_comment_container">
 
+                            <%if post.comments.nil?%>
+
                             <div class="post_list_comments">
                                 <%post.comments.each do |comment|%>
                                 <div class="individual_comment">
@@ -55,7 +57,7 @@
                             </div>
 
 
-
+                            <%end%>
 
 
 
@@ -67,6 +69,7 @@
                             <%=f.submit "post"%>
                             </div>
                             <%end%>
+
                         </div>
 
 
