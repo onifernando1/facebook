@@ -15,6 +15,23 @@
         <%end%>
     </div>
 
+
+    <div>
+                <%current_user.fr_received.each do |fr|%>
+                <%@fr_sender = User.find(fr.sent_from_id)%>
+                <%=@fr_sender.full_name%>
+                <%=form_with model:@friendship,data:{turbo:false} do |f|%>
+                <%=f.hidden_field :friend_one_id, value: @fr_sender.id%>
+                <%=f.hidden_field :friend_two_id, value:current_user.id%>
+                <%=f.submit "Accept friend request"%>
+                <%end%>
+                <%end%>
+
+    </div>
+
+
+
+
     <div class="index_friends_list">
         Friends:
         <%current_user.friends_as_one.each do |friend|%>

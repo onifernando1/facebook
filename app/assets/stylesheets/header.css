@@ -1,6 +1,9 @@
+/* # fix header shrinkigng */
+
 .index_top_bar_container{
     background-color: white;
     height:70px;
+    width:100vh;
     /* display:flex; */
     /* justify-content: space-around; */
     display:grid;
