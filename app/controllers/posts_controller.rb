@@ -4,14 +4,20 @@ class PostsController < ApplicationController
         @posts = Post.all
         @list_of_ids = get_ids()
         @timeline_posts = Post.where(user_id: @list_of_ids)
+        @default_user = User.find_by(email:"onifernando1@gmail.com")
+
     end 
 
     def show
         @post = Post.find(params[:id])
+        @default_user = User.find_by(email:"onifernando1@gmail.com")
+
     end 
 
     def new
         @post = Post.new 
+        @default_user = User.find_by(email:"onifernando1@gmail.com")
+
     end 
 
     def create

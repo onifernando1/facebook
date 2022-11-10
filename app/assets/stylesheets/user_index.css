@@ -22,30 +22,6 @@
 
 
 
-.index_post {
-    height:400px;
-    width:700px;
-    background-color: white;
-}
-
-
-
-.index_post_container {
-    height:11rem;
-    width:600px;
-    background-color: white;
-    margin-top:20px;
-    padding:20px;
-}
-
-.index_post_name{
-    font-weight:700;
-    font-size:1rem;
-}
-
-.index_post_info {
-    margin-top:20px;
-}
 .post_edit_frame {
     margin-top:20px;
     height:50px;
