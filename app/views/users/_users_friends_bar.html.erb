@@ -18,7 +18,7 @@
 
 
     <div class="friend_requests_container">
-        <div>Friend Requests</div>
+        <div class="subheading">Friend Requests</div>
         <%current_user.fr_received.each do |fr|%>
         <%@fr_sender = User.find(fr.sent_from_id)%>
         <div class="friend_request_individual_container">
@@ -32,7 +32,7 @@
                 <%= render "accept_friend_request_form"%>
             </div>
             <div class="reject_friend_request">
-                <%=button_to "Reject", fr, :method => :delete%>
+                <%=button_to "Remove", fr, :method => :delete %>
             </div>
         </div>
          
@@ -45,7 +45,7 @@
 
     <div class="index_friends_list">
         <div class="index_friends_list_container">
-            Friends:
+            <div class="subheading">Friends:</div>
             <%current_user.friends_as_one.each do |friend|%>
             <div class="index_current_friends_container">
                 <div class="index_current_friends_logo">

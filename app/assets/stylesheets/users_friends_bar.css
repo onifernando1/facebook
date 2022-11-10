@@ -6,6 +6,11 @@
     display: flex;
     align-items: center;
     width:250px;
+    
+}
+
+.index_current_friends_logo{
+    margin-right:10px;
 }
 
 .index_friends_list_container {
@@ -15,20 +20,65 @@
     /* align-items: center; */
     overflow-y: auto;
     height:600px;
-    background-color: red;
+    /* background-color: red; */
+
+}
+
+.friend_requests_container{
+    height:300px;
+    overflow-y: auto;
 
 }
 
 .friend_request_photo > img{
     height:45px;
+    margin-right:10px;
 }
 
 .friend_request_individual_container{
     display:flex;
     align-items: center;
+    /* margin-right:20px; */
 }
 
-.accept_friend_request_form > button {
-    
+.accept_friend_request_form > form > input[type="submit"] {
+    background-color:#1877F2 ;
+    border:none;
+    color:white;
+    padding:5px;
+    border-radius:6px;
+    margin-left:15px;
 
+
+}
+
+.reject_friend_request > .button_to > button {
+    background-color:#b6b8b8 ;
+    border:none;
+    /* color:white; */
+    padding:5px;
+    border-radius:6px;
+    margin-left:10px;
+}
+
+.subheading{
+    font-size:1.2rem;
+    color:#65676B;
+    font-weight:700;
+}
+
+.index_friends_list_container > div:nth-child(2), .friend_requests_container > div:nth-child(2){
+    margin-top:10px;
+}
+
+.friend_request_individual_container, .index_current_friends_container {
+    /* margin-left:5px; */
+}
+
+.friend_requests_container{
+    margin-top:20px;
+}
+
+.friend_requests_container, .index_friends_list {
+    /* margin-left:15px; */
 }

@@ -1,5 +1,5 @@
                     <%=form_with model:@friendship,data:{turbo:false} do |f|%>
                     <%=f.hidden_field :friend_one_id, value: @fr_sender.id%>
                     <%=f.hidden_field :friend_two_id, value:current_user.id%>
-                    <%=f.submit "Accept"%>
+                    <%=f.submit "Confirm"%>
                     <%end%>

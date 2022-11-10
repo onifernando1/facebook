@@ -1,9 +1,17 @@
     <div class="user_search_results_container grey">
-    Users Found:
-            <%=@users_found.each do |user| %>%
-            <%= user.full_name%> 
-            <%=link_to "View Profile", user_path(user), id: user.id%>
+    <div class="back_to_timeline">
+    <%=link_to "Back to timeline", root_path%> 
+    </div>
+    <div class="users_found_title">Users Found:</div>
+            <%if @users_found%>
+            <%@users_found.each do |user| %>
+            <div class="users_found_container_individual">
+            <%=image_tag user.gravatar_url %> 
+            <%=link_to user.full_name, user_path(user), id: user.id%>
+            </div>
             <%end%> 
+            <%else%>
+            <div>No users with that name found. Try again later.</div>
+            <%end%>
 
-           <%=link_to "Back", root_path%> 
 </div>

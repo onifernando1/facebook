@@ -1,0 +1,27 @@
+.users_found_container_individual > img{
+    width:80px;
+    margin-right:30px;
+}
+
+.users_found_container_individual {
+    display: flex;
+    align-items: center;
+
+}
+
+.back_to_timeline{
+    margin-top:20px;
+}
+
+.back_to_timeline > a, .back_to_timeline > a:visited {
+
+    /* margin-top:40px; */
+    /* background-color: red; */
+    color:rgb(89, 87, 87);
+}
+
+
+.users_found_title{
+    margin-top:20px;
+    margin-bottom:20px;
+}
