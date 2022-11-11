@@ -101,18 +101,30 @@
 }
 
 .users_show_body_container{
-    display: grid;
-    grid-template-columns: 500px 500px;
+    display: flex;
+    justify-content: center;
+    gap:230px;
+    margin-top:20px;
+    background-color:#f0f2f5;
+    width:100%;
 }
 
 .users_show_left > div{
-    background-color: cyan;
-    height:300px;
-    width:300px;
+    background-color: white;
+    height:330px;
+    width:430px;
+    margin-bottom:20px;
+    border-radius:7px;
 }
 
 .users_show_right > div{
     background-color: cyan;
     height:300px;
     width:300px;
+    border-radius:7px;
+
+}
+
+.users_show_left, .users_show_right{
+    margin-top: 20px;
 }

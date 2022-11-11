@@ -1,0 +1,41 @@
+.intro_button{
+    font-weight:700;
+    font-size:0.8rem;
+    background-color: #f0f2f5;
+    padding:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:390px;
+    height:25px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    /* margin-left:1px; */
+    border-radius:7px;
+}
+
+.intro_button:hover{
+    background-color: #c3c3c5;
+
+}
+
+.intro_container{
+    display:flex;
+    flex-direction: column;
+    padding:15px;
+    /* align-items: center; */
+}
+
+.intro_title{
+    font-weight:900;
+    font-size:1.2rem;
+    /* margin-left:-340px; */
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.user_info {
+    font-size:0.8rem;
+    margin-top:5px;
+    margin-bottom:5px;
+}
