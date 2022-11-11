@@ -12,10 +12,10 @@
         </div>
         <div class="name_and_friends">
             <div class="show_user_name">
-                <%=current_user.full_name%>
+                <%=@user.full_name%>
             </div>
             <div class="show_user_friends">
-                <%=current_user.friends_as_one.count()%> <%if current_user.friends_as_one.count()==1%> friend <%else%> friends <%end%>
+                <%=@user.friends_as_one.count()%> <%if @user.friends_as_one.count()==1%> friend <%else%> friends <%end%>
             </div>
         </div>
     </div>
@@ -38,10 +38,10 @@
     <div><%=render "intro"%></div>
     <div><%=render "photos"%></div>
     <div><%=render "friends"%></div>
-    <div><%render "life_events"%></div>
     </div>
     <div class="users_show_right">
-        <div>Posts</div>
+        <div class="posts_title">Posts</div>
+        <div><%=render "post"%></div>
     </div>
 </div>
 

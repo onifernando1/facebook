@@ -1,0 +1,13 @@
+<div class="friends_container">
+    <div class="friends_title">Friends</div>
+    <div class="friends_count"><%=@user.friends_as_one.count()%> <%if @user.friends_as_one.count() != 1%>friends<%else%>friend<%end%></div>
+    <div><%=link_to "See all friends", friendship_path(@user)%></div>
+    <div>
+        <%@user.friends_as_one.each do |friend|%>
+            <div class="individual_friend_container">
+            <%= image_tag friend.gravatar_url default: @default_user.gravatar_url%>
+            <%=friend.full_name%>
+            </div>
+            <%end%>    
+    </div>
+</div>

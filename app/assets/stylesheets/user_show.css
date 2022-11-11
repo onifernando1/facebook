@@ -117,13 +117,13 @@
     border-radius:7px;
 }
 
-.users_show_right > div{
+/* .users_show_right > div{
     background-color: cyan;
     height:300px;
     width:300px;
     border-radius:7px;
 
-}
+} */
 
 .users_show_left, .users_show_right{
     margin-top: 20px;
