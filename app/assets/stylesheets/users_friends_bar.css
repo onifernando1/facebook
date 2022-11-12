@@ -27,6 +27,7 @@
 .friend_requests_container{
     height:300px;
     overflow-y: auto;
+    margin-right:50px;
 
 }
 
@@ -82,3 +83,4 @@
 .friend_requests_container, .index_friends_list {
     /* margin-left:15px; */
 }
+
