@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
 
     before_action :configure_permitted_parameters, if: :devise_controller?
 
-    @default_user = User.find_by(email:"onifernando1@gmail.com")
-
+    
 
   protected
 

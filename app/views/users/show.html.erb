@@ -35,13 +35,17 @@
 </div>
 <div class = "users_show_body_container">
     <div class="users_show_left">
-    <div><%=render "intro"%></div>
-    <div><%=render "photos"%></div>
-    <div><%=render "friends"%></div>
+        <%=render "intro"%>
+        <%=render "photos"%>
+        <%=render "friends"%>
     </div>
     <div class="users_show_right">
         <div class="posts_title">Posts</div>
+        <%if @user.posts.length != 0%>
         <div><%=render "post"%></div>
+        <%else%>
+            <div class="no_posts">You don't have any posts</div>
+        <%end%>
     </div>
 </div>
 

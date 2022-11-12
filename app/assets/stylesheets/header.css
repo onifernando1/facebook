@@ -7,20 +7,27 @@
     /* display:flex; */
     /* justify-content: space-around; */
     display:grid;
-    grid-template-columns: 300px 1000px 300px;
+    grid-template-columns: 1fr 5fr 1fr;
     }
 
 
 
-.name_search, .logout {
+.name_search {
     display:flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    width:480px;
     
 }
 
+.logout{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .name_search{
-    gap:20px;
+    /* gap:20px; */
 }
 
 .name_search_form {
@@ -72,7 +79,7 @@
 }
 
 .logout{
-    margin-right:-800px;
+    /* margin-right:-800px; */
     
 }
 

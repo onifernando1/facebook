@@ -103,7 +103,7 @@
 .users_show_body_container{
     display: flex;
     justify-content: center;
-    gap:230px;
+    gap:50px;
     margin-top:20px;
     background-color:#f0f2f5;
     width:100%;
@@ -127,4 +127,17 @@
 
 .users_show_left, .users_show_right{
     margin-top: 20px;
+}
+
+.no_posts {
+    width:550px;
+    height:200px;
+    border-radius: 10px;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    font-weight:800;
+    font-size:1.5rem;
 }
