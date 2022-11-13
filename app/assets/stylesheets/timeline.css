@@ -143,3 +143,8 @@
     /* width:80px; */
     /* background-color: red; */
 }
+
+.post_details > div > a, .post_details > div > a:visited {
+    text-decoration: none;
+    color:black
+}
