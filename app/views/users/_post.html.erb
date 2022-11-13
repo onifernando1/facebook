@@ -68,7 +68,7 @@
                                             <%=image_tag comment.commenter.gravatar_url default: @default_user.gravatar_url%>
                                         </div>
                                         <div class="commenter_info_container">
-                                            <div class="commenter_name"><%=comment.commenter.full_name%></div>
+                                            <div class="commenter_name"><%= link_to comment.commenter.full_name, user_path(comment.commenter.id), data:{turbo:false}%></div>
                                             <div class="commenter_info"><%=comment.information%></div>
                                         </div>
                                     </div>

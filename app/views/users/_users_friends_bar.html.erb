@@ -26,7 +26,7 @@
                 <%= image_tag @fr_sender.gravatar_url default: @default_user.gravatar_url%>
             </div>
             <div>
-                <%=@fr_sender.full_name%>
+                <%= link_to @fr_sender.full_name, user_path(@fr_sender.id), data:{turbo:false}%>
             </div>
             <div class="accept_friend_request_form">
                 <%= render "users/accept_friend_request_form"%>
@@ -51,7 +51,7 @@
                 <div class="index_current_friends_logo">
                     <%= image_tag friend.gravatar_url default: @default_user.gravatar_url%>
                 </div>
-                <div class="index_current_friends_name"><%=friend.full_name%> </div>
+                <div class="index_current_friends_name"><%=link_to friend.full_name, user_path(friend.id), data:{turbo:false}%> </div>
             </div>
                 <%end%>
             </div>

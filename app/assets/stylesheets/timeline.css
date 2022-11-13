@@ -144,7 +144,12 @@
     /* background-color: red; */
 }
 
-.post_details > div > a, .post_details > div > a:visited {
+.post_details > div > a, .post_details > div > a:visited, .index_current_friends_name > a, .index_current_friends_name >a:visited, .friend_request_individual_container > div > a, .friend_request_individual_container > div >a:visited, .commenter_name >a, .commenter_name > a:visited {
     text-decoration: none;
     color:black
+}
+
+.commenter_name {
+    font-weight:700;
+    margin-bottom:2px;
 }
