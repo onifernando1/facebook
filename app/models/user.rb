@@ -60,5 +60,14 @@ class User < ApplicationRecord
                   # user.skip_confirmation!
                 end
         end
+
+        def friends_with?(current_user, user)
+                if Friendship.find_by(friend_one_id:current_user.id,friend_two_id:user.id)
+                        return true 
+                else 
+                        return false 
+                end 
+            end 
+        
         
 end

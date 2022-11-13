@@ -16,6 +16,8 @@ class FriendshipsController < ApplicationController
         end  
     end 
 
+    
+
     private 
 
     def friendship_params

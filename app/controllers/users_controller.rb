@@ -26,6 +26,7 @@ class UsersController < ApplicationController
         @friend_requests = FriendRequest.all
         @default_user = User.find_by(email:"onifernando1@gmail.com")
         @timeline_posts = Post.where(user_id: @user.id)
+        
 
     end
 
@@ -43,6 +44,7 @@ class UsersController < ApplicationController
             render :new, status: :unprocessable_entity
         end 
     end 
+
 
 
     private 
