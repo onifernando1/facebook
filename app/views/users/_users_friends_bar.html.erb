@@ -18,7 +18,7 @@
 
 
     <div class="friend_requests_container">
-        <div class="subheading">Friend Requests</div>
+        <div class="subheading">Friend Requests:</div>
         <%current_user.fr_received.each do |fr|%>
         <%@fr_sender = User.find(fr.sent_from_id)%>
         <div class="friend_request_individual_container">

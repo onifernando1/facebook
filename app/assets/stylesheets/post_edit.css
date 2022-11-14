@@ -1,0 +1,23 @@
+
+.post_edit_frame {
+    /* margin-top:20px; */
+    height:300px;
+    width:600px;
+    padding:20px;
+    background-color: white;
+    
+}
+
+.post_edit_frame > form{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_edit_frame > form > input[type="text"] {
+    height:250px;
+    max-width:500px;
+    overflow-y:auto;
+}

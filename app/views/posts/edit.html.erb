@@ -1,10 +1,10 @@
 
 
 <%= turbo_frame_tag @post do %>
-    <div class="post_edit_frame">
+    <div class="post_edit_frame turbo">
     <%=form_with model: @posts, data:{turbo:false} do |f|%>
     <%=f.hidden_field :user_id, value: current_user.id%>
-    <%=f.text_field :information, placeholder: "What's on your mind?"%>
+    <%=f.text_area :information, placeholder: "What's on your mind?", cols:50, rows:15 %>
     <%=f.submit "Post"%>
     <%end%>
   <%= link_to "Return to Post", root_path %>
