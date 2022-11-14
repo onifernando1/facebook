@@ -62,11 +62,20 @@
     color:rgb(114, 113, 113);
     font-weight:700;
 
-
 }
 
 .post_like > form > input[type="submit"]:hover {
     background-color: rgb(197, 193, 193);
+}
+
+
+.post_like.unlike > form > button{
+    border:none;
+    background-color: white;
+    color:#1877F2;
+    font-weight:700;
+    font-size:1rem;
+
 }
 
 .write_comment_outer_container > img {

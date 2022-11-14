@@ -31,6 +31,13 @@
                             </div>
                         </div>
                         <div class="post_interactions_container">
+                        
+                        <%if post.likes.find_by(post_id: post.id, user_id: current_user.id) %>
+                        <div class="post_like unlike">
+                            <%=button_to "👍 Liked", post.likes.find_by(post_id: post.id, user_id: current_user.id), :method => :delete, data:{turbo:false} %>
+                            </div>
+                        <%else%>
+
                             <div class="post_like">
                                 <%=form_with model: @like, data:{turbo:false} do |f|%>
                                 <%=f.hidden_field :user_id, value:current_user.id%>
@@ -38,10 +45,11 @@
                                 <%=f.submit "👍 Like"%>
                                 <%end%>
                             </div>
+                        <%end%>
+
                             <div>Comment</div>
                             <div>Share</div>
                         </div>
-
                         <div class="post_comment_container">
 
                             
