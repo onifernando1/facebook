@@ -141,3 +141,23 @@
     font-weight:800;
     font-size:1.5rem;
 }
+
+.friends_tag_container > img{
+    height:40px;
+}
+
+.friends_tag_container{
+    display: flex;
+    gap:5px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #1B74E4; */
+    width:120px;
+    height:60px;
+    border-radius: 8px;
+    margin-left:200px;
+}
+
+.friends_tag{
+    /* color:white; */
+}

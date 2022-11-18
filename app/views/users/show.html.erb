@@ -32,6 +32,11 @@
         <%end%>
         </div>
     </div>
+    <%elsif current_user != @user && current_user.friends_with?(current_user, @user) == true%>
+        <div class="friends_tag_container">
+            <%=image_tag "friends.png"%>
+            <div class="friends_tag">Friends</div>
+        </div>
     <%end%>
 </div>
 <div class = "users_show_body_container">
